@@ -9,7 +9,7 @@ describe('users model', function() {
         })
 
         it('should insert a user', async function() {
-            await insert({ name: 'sean'});
+            await insert({ name: 'sean', age: '29'});
 
             const users = await db('users');
 

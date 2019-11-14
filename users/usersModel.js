@@ -5,5 +5,5 @@ module.exports = {
 };
 
 function insert(user) {
-    // return db('users').insert(user, 'id')
+    return db('users').insert(user, 'id')
 }
