@@ -1,6 +1,6 @@
 const db = require('../data/dbConfig.js');
 
-const { insert, find } = require('./usersModel.js');
+const { insert, remove } = require('./usersModel.js');
 
 describe('users model', function() {
     describe('insert()', function() {
@@ -18,11 +18,10 @@ describe('users model', function() {
         })
 
         it('should remove a user', async function() {
-            await remove({ id });
-
             const users = await db('users');
+            await remove({ name: 'sean', age: '29'});
 
-            expect(users).toNotInclude(user[0]);
+            expect(users).toHaveLength(0);
         })
     })
 })
