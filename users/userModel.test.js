@@ -9,7 +9,7 @@ describe('users model', function() {
         })
 
         it('should insert a user', async function() {
-            await insert({ name: 'sean', age: '29'});
+            await insert({ name: 'sean'});
 
             const users = await db('users');
 
@@ -19,7 +19,7 @@ describe('users model', function() {
 
         it('should remove a user', async function() {
             const users = await db('users');
-            await remove({ name: 'sean', age: '29'});
+            await remove({ name: 'sean'});
 
             expect(users).toHaveLength(0);
         })
